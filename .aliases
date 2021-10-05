@@ -1,35 +1,29 @@
 #!/bin/bash
 # ~/.aliases
 
-# Shorten useful but long commands. Or short commone things
-alias nolink="find -L $DIR -maxdepth 1 -type l -delete" # delete dead symlinks
+# Shorten useful but long commands. Or ones I forget
+alias nolink="find -L $DIR -maxdepth 1 -type l -delete"
 alias upup="sudo apt update && sudo apt upgrade && sudo apt autoremove"
-alias get="sudo sudo apt-get -q -y -o Dpkg::Use-Pty=0 install"
-alias chrome="google-chrome"
-
-#Network
-alias myip="curl -s http://checkip.dyndns.org | sed 's/[a-zA-Z<>/ :]//g'"
+alias get="sudo apt-get -q -y -o Dpkg::Use-Pty=0 install"
+alias chrome="google-chrome" # delete dead symlinks
+alias cip="curl -s http://checkip.dyndns.org | sed 's/[a-zA-Z<>/ :]//g'" # "see" my ip address
 
 # SQL stuff
 alias ocps="psql -U $USER -d ocps"
 
 # Do python stuff
 alias pip="pip3"
-alias pie=". ~/Apps/pie/bin/activate && cd ~/Apps/pie" # Go to website gen dir & start env
 
 # Do java stuff
-alias weka="source $JAVA/Weka/weka.sh"
-alias lyze=". $UIMA_HOME/bin/documentAnalyzer.sh"
-alias png="java -jar $JAVA/lib/pdfbox-app-2.0.24.jar  PDFToImage -imageType png"
 
 # Call AppImages
 
 # List a variety of things various ways.
 alias colortest="colortest-python -n"
 alias all="exa -a"
-alias akk="exa -a" # because typos
+alias akk="exa -a" # ... typos
 alias ALL="exa -a"
-alias tree="exa -T"
+alias tree="exa -Ta"
 alias ls='ls --color=auto'
 alias dir='dir --color=auto'
 alias vdir='vdir --color=auto'
