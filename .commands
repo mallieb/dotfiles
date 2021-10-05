@@ -1,0 +1,166 @@
+#!/bin/bash
+# ~/.commands: utility functions & simple shell programs
+
+..() {
+        cd ..
+}
+
+#note() {
+#	gnome-terminal --window-with-profile=light --hide-menubar --working-directory=Notes 
+#
+#	if [[ -z $1 ]]
+#	then
+#	echo "What would you like to do?"
+#	select option in "New Note" "Update a Recent Note" "Find Notes" Quit
+#	do
+#		case $option in
+#			"New Note")
+#				vim ~/Note/
+#				. ~/.bashrc
+#				if [[ $? -eq 0 ]]
+#				then
+#					echo "Command aliases updated."
+#				else
+#					echo "Sorry, try again."
+#				fi
+#				break
+#				;;
+#	else
+#	fi
+#}
+
+trash() {
+	stamp=$(date +%m%d%H%M%S)
+	if [[ -z $1 ]]
+	then
+		cd $TRASH
+	else
+		for i
+		do
+			if [[ $i == "-e" ]]
+			then
+				sudo rm -rf $TRASH
+				mkdir -p $TRASH
+				if [[ $? -eq 0 ]]
+				then
+					echo "Trash emptied"
+				else
+					echo "Can't empty the trash."
+				fi
+			else
+				sudo mv $i $TRASH/$i$stamp
+				if [[ $? -eq 0 ]]
+				then
+					echo "$i is now in the trash."
+				else
+					echo "Sorry, try again,"
+				fi
+			fi
+		done
+	fi
+}
+
+pasta() {
+	if [[ -z $1 ]]
+	then
+		cd $PASTA
+	else
+		if [[ ! -z $2 ]]
+		then
+			ext=".$2"
+		else
+			ext=""
+		fi
+		vim $PASTA/$1$ext
+	fi
+}
+
+fix() {
+	echo "Which configuration file would you like to fix?"
+	select setting in Aliases Commands Variables Editor Paths Basic Quit
+	do
+		case $setting in
+			Aliases)
+				vim ~/.aliases
+				. ~/.bashrc
+				if [[ $? -eq 0 ]]
+				then
+					echo "Command aliases updated."
+				else
+					echo "Sorry, try again."
+				fi
+				break
+				;;
+			Commands)
+                                vim ~/.commands
+                                . ~/.bashrc
+                                if [[ $? -eq 0 ]]
+                                then
+                                        echo "User-created commands updated."
+                                else
+                                        echo "Sorry, try again."
+                                fi
+				break
+                                ;;
+                        Variables)
+                                vim ~/.variables
+                                . ~/.bashrc
+                                if [[ $? -eq 0 ]]
+                                then
+                                        echo "Variables updated."
+                                else
+                                        echo "Sorry, try again."
+                                fi
+				break
+                                ;;
+                        Editor)
+                                vim ~/.vimrc
+                                if [[ $? -eq 0 ]]
+                                then
+                                        echo "Your vimrc is updated."
+                                else
+                                        echo "Sorry, try again."
+                                fi
+				break
+				;;
+			Paths)
+				vim ~/.paths
+				. ~/.bashrc
+				if [[ $? -eq 0 ]]
+				then
+					echo "Your paths are updated."
+				else
+					echo "Sorry, try again."
+				fi
+				break
+				;;
+			Basic)
+				vim ~/.bashrc
+				. ~/.bashrc
+				if [[ $? -eq 0 ]]
+				then
+					echo "Your bashrc is updated."
+				else
+					echo "Sorry, try again."
+				fi
+				break
+				;;
+			Quit)
+				echo "Goodbye."
+				break
+				;;
+			*)
+				echo "Invalid option $setting."
+				;;
+		esac
+	done
+}
+
+########################################################
+# Functions to call Python programs
+
+label() {
+	. /home/alex/Library/Python/labelme/.anaconda3/bin/activate
+	/home/alex/Library/Python/labelme/.anaconda3/bin/labelme
+	. /home/alex/Library/Python/labelme/.anaconda3/bin/deactivate
+}

@@ -1,0 +1,10 @@
+#!/bin/bash
+mine=~/bin:~/Apps/bin
+locals=~/.local/bin:~/usr/.local/sbin:~/.local/games:/usr/local/bin:/usr/local/sbin
+zorin=/usr/bin:/usr/sbin:/bin:/sbin:/snap/bin
+
+PATH=$mine:$locals:$zorin
+
+OSFONTDIR=~/.fonts:/usr/share/fonts:/usr/share/texmf/fonts:/etc/fonts:/usr/local/share/fonts
+
+export PATH OSFONTDIR

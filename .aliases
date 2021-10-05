@@ -1,0 +1,39 @@
+#!/bin/bash
+# ~/.aliases
+
+# Shorten useful but long commands. Or short commone things
+alias nolink="find -L $DIR -maxdepth 1 -type l -delete" # delete dead symlinks
+alias upup="sudo apt update && sudo apt upgrade && sudo apt autoremove"
+alias get="sudo sudo apt-get -q -y -o Dpkg::Use-Pty=0 install"
+alias chrome="google-chrome"
+
+#Network
+alias myip="curl -s http://checkip.dyndns.org | sed 's/[a-zA-Z<>/ :]//g'"
+
+# SQL stuff
+alias ocps="psql -U $USER -d ocps"
+
+# Do python stuff
+alias pip="pip3"
+alias pie=". ~/Apps/pie/bin/activate && cd ~/Apps/pie" # Go to website gen dir & start env
+
+# Do java stuff
+alias weka="source $JAVA/Weka/weka.sh"
+alias lyze=". $UIMA_HOME/bin/documentAnalyzer.sh"
+alias png="java -jar $JAVA/lib/pdfbox-app-2.0.24.jar  PDFToImage -imageType png"
+
+# Call AppImages
+
+# List a variety of things various ways.
+alias colortest="colortest-python -n"
+alias all="exa -a"
+alias akk="exa -a" # because typos
+alias ALL="exa -a"
+alias tree="exa -T"
+alias ls='ls --color=auto'
+alias dir='dir --color=auto'
+alias vdir='vdir --color=auto'
+alias grep='grep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
+alias processing=~/src/processing/processing
