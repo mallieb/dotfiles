@@ -2,10 +2,10 @@
 # ~/.aliases
 
 # Shorten useful but long commands. Or ones I forget
-alias nolink="find -L $DIR -maxdepth 1 -type l -delete"
+alias nolink="find -L $DIR -maxdepth 1 -type l -delete" # delete dead symlinks
 alias upup="sudo apt update && sudo apt upgrade && sudo apt autoremove"
 alias get="sudo apt-get -q -y -o Dpkg::Use-Pty=0 install"
-alias chrome="google-chrome" # delete dead symlinks
+alias chrome="google-chrome" 
 alias cip="curl -s http://checkip.dyndns.org | sed 's/[a-zA-Z<>/ :]//g'" # "see" my ip address
 alias down="cd ~/Downloads"
 
