@@ -7,6 +7,7 @@ alias upup="sudo apt update && sudo apt upgrade && sudo apt autoremove"
 alias get="sudo apt-get -q -y -o Dpkg::Use-Pty=0 install"
 alias chrome="google-chrome" # delete dead symlinks
 alias cip="curl -s http://checkip.dyndns.org | sed 's/[a-zA-Z<>/ :]//g'" # "see" my ip address
+alias down="cd ~/Downloads"
 
 # SQL stuff
 alias ocps="psql -U $USER -d ocps"
