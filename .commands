@@ -5,30 +5,6 @@
         cd ..
 }
 
-#note() {
-#	gnome-terminal --window-with-profile=light --hide-menubar --working-directory=Notes 
-#
-#	if [[ -z $1 ]]
-#	then
-#	echo "What would you like to do?"
-#	select option in "New Note" "Update a Recent Note" "Find Notes" Quit
-#	do
-#		case $option in
-#			"New Note")
-#				vim ~/Note/
-#				. ~/.bashrc
-#				if [[ $? -eq 0 ]]
-#				then
-#					echo "Command aliases updated."
-#				else
-#					echo "Sorry, try again."
-#				fi
-#				break
-#				;;
-#	else
-#	fi
-#}
-
 trash() {
 	stamp=$(date +%m%d%H%M%S)
 	if [[ -z $1 ]]
@@ -57,21 +33,6 @@ trash() {
 				fi
 			fi
 		done
-	fi
-}
-
-pasta() {
-	if [[ -z $1 ]]
-	then
-		cd $PASTA
-	else
-		if [[ ! -z $2 ]]
-		then
-			ext=".$2"
-		else
-			ext=""
-		fi
-		vim $PASTA/$1$ext
 	fi
 }
 
@@ -154,13 +115,4 @@ fix() {
 				;;
 		esac
 	done
-}
-
-########################################################
-# Functions to call Python programs
-
-label() {
-	. /home/alex/Library/Python/labelme/.anaconda3/bin/activate
-	/home/alex/Library/Python/labelme/.anaconda3/bin/labelme
-	. /home/alex/Library/Python/labelme/.anaconda3/bin/deactivate
 }
