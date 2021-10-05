@@ -7,29 +7,6 @@ pscolor=$(tput bold && tput setaf 95)
 resetcolor=$(tput sgr0)
 
 PS1="${dirblue}\w ${pscolor}\$${resetcolor}: "
-LIB="$HOME/Library"
-UTIL="$LIB/Utilities"
 TRASH="$HOME/.local/share/Trash"
-DOWN="$HOME/Downloads"
-READ="$HOME/Readings"
 
-CPP="$LIB/C++"
-
-PY="$LIB/Python"
-PIPX_HOME="$PY/pipx"
-LABEL="$PY/labelme/.anaconda3/bin"
-PIPX_BIN_DIR="$HOME/bin"
-JVM="/usr/lib/jvm/java-11-openjdk-amd64"
-JAVA_HOME="$JVM"
-JAVA="$LIB/Java"
-JENA_HOME="$JVM/Jena"
-MVN_HOME="$JVM/Maven"
-ANT_HOME="$JVM/Ant"
-PATH_TO_FX="$JVM/JavaFX"
-UIMA_HOME="$JVM/UIMA"
-HERITRIX_HOME="$JAVA/Heritrix"
-#CLASSPATH="$JVM/lib:$JAVA/lib:$HOME/.m2"
-#CLASSPATH="$JAVA_HOME/*:$JENA_HOME/*:$MVN_HOME/*:$ANT_HOME/*:$PATH_TO_FX/*:$UIMA_HOME/*:$JVM/CoreNLP/*"
-
-
-export PATH PS1 UTIL DOWN JAVA LIB CPP PY TRASH PASTA JVM JAVA_HOME MVN_HOME ANT_HOME PATH_TO_FX UIMA_HOME JENA_HOME HERITRIX_HOME
+export PATH PS1 TRASH
