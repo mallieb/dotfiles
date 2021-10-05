@@ -13,7 +13,3 @@ LC_ALL="en_US.UTF-8"
 . ~/.aliases
 . ~/.commands
 . ~/.paths
-
-
-#MANPATH=$HOME/Apps/texmf/doc/man:$HOME/.tex/texmf-dist/doc/man:$MANPATH;
-#INFOPATH=$HOMR/Apps/texmf/doc/info:$HOME/.tex/texmf-dist/doc/info:$INFOPATH;
